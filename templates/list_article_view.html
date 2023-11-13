@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Tahrirlashni ko'rish</h1>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+        <p>
+            Postingiz yangilandi: 
+            <a href="{% url 'article_list' %}">Barcha postlarga o'tish</a>
+        </p>
+    </form>
+{% endblock content %}
